@@ -12,15 +12,6 @@
             content: "You can start editing by clicking here... 🙌"
         });
     }
-
-    const remove = (e) => e.target.parentElement.remove();
-
-    const clap = (e) => {
-        const numberOfClaps = parseInt(e.target.dataset.claps, 10)
-        
-        e.target.dataset.claps = numberOfClaps + 1;
-        e.target.innerText = `👏x${numberOfClaps + 1}`;
-    }
 </script>
 
 <main class="app">
@@ -36,20 +27,20 @@
         <div class="columns">
             <div class="column column-1">
                 {#each columns[0] as item}
-                    <Column content={item.content} clap={clap} remove={remove} />
+                    <Column content={item.content} />
                 {/each}
             </div>
 
 
             <div class="column column-2">
                 {#each columns[1] as item}
-                    <Column content={item.content} clap={clap} remove={remove} />
+                    <Column content={item.content} />
                 {/each}
             </div>
 
             <div class="column column-3">
                 {#each columns[2] as item}
-                    <Column content={item.content} clap={clap} remove={remove} />
+                    <Column content={item.content} />
                 {/each}
             </div>
         </div>

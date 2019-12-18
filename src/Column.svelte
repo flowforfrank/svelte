@@ -1,9 +1,16 @@
 <script>
-    import { fly, scale } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
+
+    const remove = (e) => e.target.parentElement.remove();
+
+    const clap = (e) => {
+        const numberOfClaps = parseInt(e.target.dataset.claps, 10)
+        
+        e.target.dataset.claps = numberOfClaps + 1;
+        e.target.innerText = `👏x${numberOfClaps + 1}`;
+    }
 
     export let content;
-    export let remove;
-    export let clap;
 </script>
 
 <div class="item" in:fly="{{ y: 200, duration: 300 }}">
