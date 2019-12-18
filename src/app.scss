@@ -1,0 +1,101 @@
+@font-face {
+    font-family: Sulphur-Regular;
+    src: url(../assets/fonts/SulphurPoint-Regular.ttf);
+}
+
+@font-face {
+    font-family: Sulphur-Bold;
+    src: url(../assets/fonts/SulphurPoint-Bold.ttf);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Sulphur-Regular;
+}
+
+.logo {
+    display: block;
+    margin: 100px auto; 
+}
+
+.grid {
+    max-width: 960px;
+    margin: 0 auto;
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    
+        button {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            border: 0;
+            padding: 20px 40px;
+            background: #FF3E00;
+            color: #FFF;
+            font-size: 24px;
+            font-family: Sulphur-Bold;
+            cursor: pointer;
+    
+            &:active {
+                background: #FF3E00;
+            }
+    
+            img {
+                margin-left: 20px;
+            }
+        }
+    }
+    
+    .columns {
+        display: flex;
+        justify-content: space-between;
+
+        .column {
+            width: 300px;
+            
+            &.column-1 .item { background: #2ECC71; box-shadow: 5px 5px 0 rgba(46, 204, 113, 0.5); }
+            &.column-2 .item { background: #F1C40F; box-shadow: 5px 5px 0 rgba(241, 196, 15, 0.5); }
+            &.column-3 .item { background: #9B59B6; box-shadow: 5px 5px 0 rgba(155, 89, 182, 0.5); }
+
+            .item {
+                color: #FFF;
+                padding: 10px;
+                min-height: 100px;
+                position: relative;
+                margin-bottom: 25px;
+
+                .content {
+                    margin-right: 35px;
+                    display: inline-block;
+                    word-break: break-all;
+                }
+
+                .remove {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: url('../assets/images/remove.png');
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    width: 28px;
+                    height: 28px;
+                    text-indent: -9999px;
+                    cursor: pointer;
+                }
+
+                .claps  {
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                }
+            }
+        }
+    }
+}
